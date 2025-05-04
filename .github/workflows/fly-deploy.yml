@@ -48,5 +48,5 @@ jobs:
         run: |
           flyctl deploy \
             --app $FLY_APP \
-            --region $FLY_REGION \
+            --regions $FLY_REGION \
             --remote-only
