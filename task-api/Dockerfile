@@ -9,6 +9,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
     go build -o task-api ./cmd/server
 
+
 # Stage 2: Minimal runtime image
 FROM alpine:latest
 WORKDIR /root/
