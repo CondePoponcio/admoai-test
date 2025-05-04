@@ -40,8 +40,9 @@ jobs:
       - name: Ensure Fly app exists
         run: |
           if ! flyctl apps list | grep -qx "${FLY_APP}"; then
-            flyctl apps create "${FLY_APP}" --region "${FLY_REGION}"
+            flyctl apps create "${FLY_APP}"
           fi
+
 
       - name: Deploy to Fly.io
         run: |
