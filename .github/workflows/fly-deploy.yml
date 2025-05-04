@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
-      FLY_APP: task-api
+      FLY_APP: admoai-task-api-condore
       FLY_REGION: iad
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
