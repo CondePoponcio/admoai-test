@@ -3,6 +3,8 @@ name: CI/CD Task-API (Fly.io)
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'task-api/**'
 
 permissions:
   contents: read
@@ -35,7 +37,7 @@ jobs:
       - name: Setup Fly CLI
         uses: superfly/flyctl-actions/setup-flyctl@v1
         with:
-          version: 'latest'  # ó fija la versión que prefieras
+          version: 'latest' 
 
       - name: Ensure Fly app exists
         run: |
