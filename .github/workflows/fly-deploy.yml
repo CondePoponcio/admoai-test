@@ -39,16 +39,6 @@ jobs:
         with:
           version: 'latest' 
 
-      - name: Ensure Fly app exists
-        run: |
-          # intenta "show", si falla (exit≠0) es porque no existe → la crea
-          if ! flyctl apps show "${FLY_APP}" >/dev/null 2>&1; then
-            flyctl apps create "${FLY_APP}"
-          else
-            echo "✔ App ${FLY_APP} ya existe, omito creación"
-          fi
-
-
 
       - name: Deploy to Fly.io
         run: |
