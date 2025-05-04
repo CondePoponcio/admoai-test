@@ -1,3 +1,4 @@
+# .github/workflows/task-api-fly-deploy.yml
 name: CI/CD Task-API (Fly.io)
 
 on:
@@ -14,8 +15,6 @@ env:
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
-    environment: production
-
     defaults:
       run:
         working-directory: task-api
@@ -33,7 +32,7 @@ jobs:
         run: go test ./internal/task -v
 
       - name: Install Fly CLI
-        uses: superfly/flyctl-actions@1.1
+        uses: superfly/flyctl-actions@v1
         with:
           version: 'latest'
 
