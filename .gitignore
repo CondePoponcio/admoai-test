@@ -1,0 +1,11 @@
+# Evitar subir llaves SSH temporales
+/scripts/**/*
+
+# No ignorar el .gitignore
+!/.gitignore
+
+# Archivos de configuración local
+*.env
+
+# Logs
+*.log

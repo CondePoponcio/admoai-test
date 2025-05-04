@@ -1,0 +1,28 @@
+# task-api/fly.toml
+app = "task-api"
+
+[build]
+  dockerfile = "Dockerfile"          # Usa tu multi-stage Dockerfile
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  auto_cert = true                    # HTTPS automático
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  # Health check TCP
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "1m"
+
+[metrics]
+  port = 8080
+  path = "/metrics"
