@@ -138,7 +138,7 @@ This will:
     docker push registry.fly.io/${{ env.FLY_APP }}:${{ github.sha }}
     ```
 
-    or let `flyctl deploy` push the image automatically for you ([Fly.io][3], [Fly.io][4]).
+    or let `flyctl deploy` push the image automatically for you.
   * **PaaS Service Deployment**
     When you run `flyctl deploy --app $FLY_APP --region $FLY_REGION`, Fly’s orchestrator:
 
