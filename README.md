@@ -130,7 +130,7 @@ This will:
 * **Cloud Infrastructure (Fly.io)**
 
   * **CI/CD Pipeline**
-    Your GitHub Actions workflow uses the `superfly/flyctl-actions/setup-flyctl` action to authenticate (`FLY_API_TOKEN`), run tests, and then invoke `flyctl deploy --remote-only`. Under the hood, that command spins up a remote builder on Fly, builds your container image there, and runs the deployment steps — all without needing Docker installed locally ([HexDocs][1], [Fly.io][2]).
+    Your GitHub Actions workflow uses the `superfly/flyctl-actions/setup-flyctl` action to authenticate (`FLY_API_TOKEN`), run tests, and then invoke `flyctl deploy --remote-only`. Under the hood, that command spins up a remote builder on Fly, builds your container image there, and runs the deployment steps — all without needing Docker installed locally.
   * **Artifact Repository (Fly Registry)**
     Fly provides a private container registry at `registry.fly.io/<app-name>`. In CI you run `fly auth docker` (via the Fly CLI) to configure Docker credentials, then you can push images with:
 
@@ -145,7 +145,7 @@ This will:
     1. Fetches (or builds) the container image from the Fly Registry
     2. Schedules it onto a Firecracker microVM in the specified region
     3. Performs health checks, TLS termination (`auto_cert`), and attaches your configured metrics scraping
-    4. Opens the app on Fly’s global anycast network, auto-scales based on load, and scrapes your `/metrics` endpoint alongside system metrics ([fly.io][5], [fly.io][6]).
+    4. Opens the app on Fly’s global anycast network, auto-scales based on load, and scrapes your `/metrics` endpoint alongside system metrics.
 
 
 ---
